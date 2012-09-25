@@ -1,10 +1,16 @@
 from django.conf.urls import patterns, include, url
+from django.http import HttpResponse
 
 # Uncomment the next two lines to enable the admin:
 # from django.contrib import admin
 # admin.autodiscover()
 
-urlpatterns = patterns('',
+def it_works(request):
+    return HttpResponse('It works.')
+
+urlpatterns = patterns(
+    '',
+    url(r'^.*$', it_works),
     # Examples:
     # url(r'^$', 'dipstick.views.home', name='home'),
     # url(r'^dipstick/', include('dipstick.foo.urls')),
